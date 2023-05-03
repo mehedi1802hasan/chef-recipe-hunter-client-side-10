@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../Firebase/Provider';
 const NavPart = () => {
+
+const {user,logOut}=useContext(AuthContext)
+const handleLogout=()=>{
+  logOut()
+  .then(()=>{})
+  .catch(error=>{
+    console.log(error.message)
+  })
+}
     return (
         <div className="flex w-11/12 m-auto bg-yellow-500 navbar ">
         <div className="navbar-start">
@@ -23,11 +34,24 @@ const NavPart = () => {
             <li> <Link to='/'>Home</Link></li>
             
            <li> <Link to='/'>Blog</Link></li>
-           <li> <Link to='/login'>Login</Link></li>
-              <li> <Link to='/registration'>Registration</Link></li>
+          
           </ul>
         </div>
-        <div className="navbar-end">
+        <div >
+       
+        <div>
+          {
+            user ?
+          <div className='bg-red-500'>
+          <img src={user.photoURL
+} alt="" />
+             <button onClick={handleLogout}>signOUt</button>
+          </div>
+                 :
+            <div className='flex gap-5'>  <h3> <Link to='/login'>Login</Link></h3>
+           <h3> <Link to='/registration'>Registration</Link></h3> </div>
+          }
+        </div>
        
         </div>
       </div>

@@ -2,8 +2,10 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../Firebase/Provider';
+import { FaGoogle,FaGithub } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const Login = () => {
-  const {loginUser}=useContext(AuthContext)
+  const {loginUser,googleLogin}=useContext(AuthContext)
   const handleSubmit=(event)=>{
     event.preventDefault()
    
@@ -21,6 +23,20 @@ const Login = () => {
     console.log(error.message)
  })
 }
+
+const handleGooglePopUp=()=>{
+  googleLogin()
+  .then(result=>{
+    const loggedUser=result.user;
+    console.log(loggedUser)
+  })
+  .catch(error=>{
+    console.log(error.message)
+  })
+}
+
+
+
     return (
         <div>
             <div className="min-h-screen hero bg-base-200">
@@ -50,9 +66,18 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
+      <div className='flex flex-col items-center gap-2 mb-4'>
+  <button onClick={handleGooglePopUp} className="btn btn-outline btn-warning"><FaGoogle /> Sign in with Google</button>
+
+  <br />
+
+  <button onClick={handleGooglePopUp} className="btn btn-outline "> <FaGithub />Sign in with GitHub</button>
+</div>
+ <p className='text-center'>New User?. Please go to <Link className='btn-link' to="/registration">Registration</Link></p>
     </div>
   </div>
 </div>
+
         </div>
     );
 };

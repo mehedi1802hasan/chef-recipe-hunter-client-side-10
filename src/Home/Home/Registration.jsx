@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../Firebase/Provider';
+import { Link } from 'react-router-dom';
 const Registration = () => {
   const {signUp}=useContext(AuthContext)
   const handleSubmit=(event)=>{
@@ -49,6 +50,7 @@ const Registration = () => {
           <button className="btn btn-primary">Registration</button>
         </div>
       </form>
+      <p className='text-center'>Have you account?. Please go to <Link className='btn-link' to="/login">Login</Link></p>
     </div>
   </div>
 </div>
