@@ -4,7 +4,9 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Firebase/Provider';
 import { FaGoogle,FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 const Login = () => {
+  const [error,setError]=useState('')
   const {loginUser,googleLogin}=useContext(AuthContext)
   const handleSubmit=(event)=>{
     event.preventDefault()
@@ -21,6 +23,7 @@ const Login = () => {
  })
  .catch(error=>{
     console.log(error.message)
+    setError(error.message)
  })
 }
 
@@ -51,13 +54,13 @@ const handleGooglePopUp=()=>{
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="text" name="email" placeholder="email" className="input input-bordered" />
+          <input type="text" name="email" placeholder="email" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Passwordddddd</span>
           </label>
-          <input type="password" name="password" placeholder="password" className="input input-bordered" />
+          <input type="password" name="password" placeholder="password" className="input input-bordered" required />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -73,6 +76,9 @@ const handleGooglePopUp=()=>{
 
   <button onClick={handleGooglePopUp} className="btn btn-outline "> <FaGithub />Sign in with GitHub</button>
 </div>
+{
+  <p className='text-center text-red-500'>{error}</p>
+}
  <p className='text-center'>New User?. Please go to <Link className='btn-link' to="/registration">Registration</Link></p>
     </div>
   </div>

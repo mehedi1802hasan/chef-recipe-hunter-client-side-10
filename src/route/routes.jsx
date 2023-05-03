@@ -8,7 +8,7 @@ import CCard from '../Home/Home/CCard';
 import Secondlayout from '../layouts/secondlayout/Secondlayout';
 import Login from '../Home/Home/Login';
 import Registration from '../Home/Home/Registration';
-
+import Error from '../Error/Error';
 import LoginLayout from './loginlayout/LoginLayout';
 const router = createBrowserRouter([
     {
@@ -45,6 +45,10 @@ const router = createBrowserRouter([
         element:<Registration></Registration>
       }
      ]
+    },
+    {
+      path:'*',
+      element:<Error></Error>
     }
   ]);
   

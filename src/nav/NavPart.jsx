@@ -14,7 +14,7 @@ const handleLogout=()=>{
   })
 }
     return (
-        <div className="flex w-11/12 m-auto bg-yellow-500 navbar ">
+        <div className="flex w-11/12 m-auto navbar ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,7 +27,7 @@ const handleLogout=()=>{
               <li> <Link to='/registration'>Registration</Link></li>
             </ul>
           </div>
-          <h3 className='text-4xl text-bold '>Kichen Chef</h3>
+          <h3 className='text-4xl font-bold '>Ki<span className='text-blue-700 '>C</span><span className='text-red-500'>hen</span> Ch<span className='text-red-500'>E</span>f</h3>
         </div>
         <div className="hidden navbar-center lg:flex">
           <ul className="px-1 menu menu-horizontal">
@@ -43,8 +43,9 @@ const handleLogout=()=>{
           {
             user ?
           <div className='bg-red-500'>
-          <img src={user.photoURL
-} alt="" />
+         <div className="w-10 rounded-full">
+          <img src={user.photoURL} />
+        </div>
              <button onClick={handleLogout}>signOUt</button>
           </div>
                  :

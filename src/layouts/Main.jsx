@@ -1,22 +1,12 @@
 import React from 'react';
-import Home from '../Home/Home/Home';
-import NavPart from '../nav/NavPart';
-import Banner from '../Banner/Banner';
-import Footer from '../Footer/Footer';
 
-import Secondlayout from './secondlayout/Secondlayout';
-import ChefCards from '../Home/ChefCards';
-
+import { Outlet } from 'react-router-dom';
 
 const Main = () => {
     return (
-        <div>
-           
-       <NavPart></NavPart>
-       <Banner></Banner>
-       <ChefCards></ChefCards>
-      <Secondlayout></Secondlayout>
-       <Footer></Footer>
+        <div className="bg-slate-300 ">
+           <Outlet/>
+    
         </div>
     );
 };

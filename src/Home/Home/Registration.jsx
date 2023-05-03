@@ -10,8 +10,8 @@ const Registration = () => {
      const form=event.target;
      const email=form.email.value;
      const password=form.password.value;
-   
-     console.log(email,password)
+      const name=form.name.value
+     console.log(name,email,password)
      signUp(email,password)
      .then(result=>{
       const singgedUser=result.user;
@@ -33,17 +33,26 @@ const Registration = () => {
     </div>
     <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
       <form onSubmit={handleSubmit}  className="card-body">
+        
+      <div className="form-control">
+          <label className="label">
+            <span className="label-text">Name</span>
+          </label>
+          <input type="text" name="name" placeholder="name" className="input input-bordered" required />
+        </div>
+        
+        
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="text" name="email" placeholder="email" className="input input-bordered" />
+          <input type="text" name="email" placeholder="email" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" name="password" placeholder="password" className="input input-bordered" />
+          <input type="password" name="password" placeholder="password" className="input input-bordered" required/>
          
         </div>
         <div className="mt-6 form-control">

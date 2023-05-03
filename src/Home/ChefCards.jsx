@@ -11,18 +11,18 @@ const ChefCards = () => {
         .catch(error=>console.log(error))
     },[])
     return (
-        <div className="grid gap-4 md:grid-cols-2 justify-items-center">
+        <div className="grid gap-4 mb-5 md:grid-cols-3 justify-items-center">
          { 
             chefs.map( chef=>
                 <div key={chef.id}>
                     <div className="shadow-xl w-max card bg-base-100">
-  <figure><img src={chef.chefPicture} alt="chefPicture" /></figure>
+  <figure><img className='h-40' src={chef.chefPicture} alt="chefPicture" /></figure>
   <div className="card-body">
     <h2 className="card-title">
    Name: {chef.chefName}
      
     </h2>
-    <p>yearsOfExperience:{chef.yearsOfExperience}</p>
+    <p>Experience:{chef.yearsOfExperience} year</p>
     <div>
       <p >Recipes: {chef.numberOfRecipes} </p>
      
