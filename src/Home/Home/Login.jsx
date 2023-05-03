@@ -19,7 +19,7 @@ const Login = () => {
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Password</span>
+            <span className="label-text">Passwordddddd</span>
           </label>
           <input type="text" placeholder="password" className="input input-bordered" />
           <label className="label">
