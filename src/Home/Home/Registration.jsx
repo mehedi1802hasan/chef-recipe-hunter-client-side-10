@@ -1,6 +1,26 @@
 import React from 'react';
-
+import { useContext } from 'react';
+import { AuthContext } from '../../Firebase/Provider';
 const Registration = () => {
+  const {signUp}=useContext(AuthContext)
+  const handleSubmit=(event)=>{
+        event.preventDefault()
+       
+     const form=event.target;
+     const email=form.email.value;
+     const password=form.password.value;
+   
+     console.log(email,password)
+     signUp(email,password)
+     .then(result=>{
+      const singgedUser=result.user;
+      console.log(singgedUser)
+     })
+     .catch(error=>{
+        console.log(error.message)
+     })
+
+    }
     return (
         <div>
            <div>
@@ -11,24 +31,24 @@ const Registration = () => {
       
     </div>
     <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
-      <div className="card-body">
+      <form onSubmit={handleSubmit}  className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="text" placeholder="email" className="input input-bordered" />
+          <input type="text" name="email" placeholder="email" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="text" placeholder="password" className="input input-bordered" />
+          <input type="password" name="password" placeholder="password" className="input input-bordered" />
          
         </div>
         <div className="mt-6 form-control">
           <button className="btn btn-primary">Registration</button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
