@@ -12,7 +12,7 @@ const CCard = () => {
   const [favorites, setFavorites] = useState([]);
   
   useEffect(() => {
-    fetch(`http://localhost:5000/chefs/${id}`)
+    fetch(`https://italian-kichen-chef-server-mehedi1802hasan.vercel.app/chefs/${id}`)
       .then(res => res.json())
       .then(data => setChef(data))
       .catch(error => console.log(error))
@@ -68,7 +68,7 @@ const CCard = () => {
                         </p>
                         
                         <p className='flex gap-2'>
-      <div className='text-center'>  <StarRatings
+      <div className='text-center'> Rating :  <StarRatings
   rating={recipe.rating}
   starDimension="20px"
   starSpacing="5px"
