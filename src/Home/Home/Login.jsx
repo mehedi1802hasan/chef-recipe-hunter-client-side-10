@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 const Login = () => {
   const [error,setError]=useState('')
-  const {loginUser,googleLogin}=useContext(AuthContext)
+  const {loginUser,googleLogin,githubLogin}=useContext(AuthContext)
   const handleSubmit=(event)=>{
     event.preventDefault()
    
@@ -37,7 +37,16 @@ const handleGooglePopUp=()=>{
     console.log(error.message)
   })
 }
-
+const handleGithubPopUp=()=>{
+  githubLogin()
+  .then(result=>{
+    const loggedUser=result.user;
+    console.log(loggedUser)
+  })
+  .catch(error=>{
+    console.log(error.message)
+  })
+}
 
 
     return (
@@ -74,7 +83,7 @@ const handleGooglePopUp=()=>{
 
   <br />
 
-  <button onClick={handleGooglePopUp} className="btn btn-outline "> <FaGithub />Sign in with GitHub</button>
+  <button onClick={handleGithubPopUp} className="btn btn-outline "> <FaGithub />Sign in with GitHub</button>
 </div>
 {
   <p className='text-center text-red-500'>{error}</p>

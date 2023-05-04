@@ -66,8 +66,7 @@ const CCard = () => {
                         <p>
                           <span className="font-bold">Method:</span> {recipe.method}
                         </p>
-                        <p>
-                          <span className="font-bold">Ratings:</span> {recipe.rating}
+                        <p className="font-bold">Ratings:   {recipe?.rating}
                         </p>
                         <div className="justify-end card-actions">
                           <button

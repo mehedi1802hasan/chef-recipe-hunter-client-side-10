@@ -43,9 +43,12 @@ const handleLogout=()=>{
           {
             user ?
           <div className='flex '>
-         <div className="w-10 rounded-full ">
-          <img src={user?.photoURL } />
-        </div>
+       <div className="w-10 rounded-full">
+       <img src={user?.photoURL} />
+
+</div>
+
+
              <button onClick={handleLogout}>signOUt</button>
           </div>
                  :
