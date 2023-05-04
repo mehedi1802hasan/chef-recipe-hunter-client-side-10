@@ -5,7 +5,7 @@ import NavPart from '../../nav/NavPart';
 import { TiHeartFullOutline } from 'react-icons/ti';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import StarRatings from 'react-star-ratings';
 const CCard = () => {
   const { id } = useParams();
   const [chef, setChef] = useState({});
@@ -66,8 +66,18 @@ const CCard = () => {
                         <p>
                           <span className="font-bold">Method:</span> {recipe.method}
                         </p>
-                        <p className="font-bold">Ratings:   {recipe?.rating}
-                        </p>
+                        
+                        <p className='flex gap-2'>
+      <div className='text-center'>  <StarRatings
+  rating={recipe.rating}
+  starDimension="20px"
+  starSpacing="5px"
+  starRatedColor="red"
+/></div>
+<div className='mt-1'> {recipe?.rating}</div>
+
+        </p>
+            
                         <div className="justify-end card-actions">
                           <button
                             className="btn btn-primary"
