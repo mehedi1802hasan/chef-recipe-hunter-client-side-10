@@ -10,6 +10,7 @@ import Login from '../Home/Home/Login';
 import Registration from '../Home/Home/Registration';
 import Error from '../Error/Error';
 import LoginLayout from './loginlayout/LoginLayout';
+import blog from '../Home/Home/blog';
 const router = createBrowserRouter([
     {
       path: "/",
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>
+        },
+        {
+          path:'/blog',
+          element:<blog></blog>
         }
       ]
     },{

@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="p-28 card-body">
        <h1 className="font-bold text-amber-500 card-title">One Step <br/> Closer To Your<br/>Dream Job </h1>
       <p className="flex justify-center text-amber-800">Join our talent community
-Get connected!  Stay informed about opportunities that match your interests.</p>
+Get connected!  Stay informed about opportunities that match your interest.</p>
      
     </div>
    </div>
