@@ -9,7 +9,7 @@ const Footer = () => {
     <p className="font-bold ">
       Italian Kichen chef. <br/>Providing reliable tech since 1992
     </p> 
-    <p>Copyright © 2023 - All right reserved</p>
+    <p>Copyright © 2023 -- All right reserved</p>
   </div> 
   <div>
     <div className="grid grid-flow-col gap-4">
