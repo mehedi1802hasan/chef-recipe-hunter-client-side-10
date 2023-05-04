@@ -42,14 +42,14 @@ const handleLogout=()=>{
         <div>
           {
             user ?
-          <div className='bg-red-500'>
-         <div className="w-10 rounded-full">
-          <img src={user.photoURL} />
+          <div className='flex '>
+         <div className="w-10 rounded-full ">
+          <img src={user?.photoURL } />
         </div>
              <button onClick={handleLogout}>signOUt</button>
           </div>
                  :
-            <div className='flex gap-5'>  <h3> <Link to='/login'>Login</Link></h3>
+            <div className='flex gap-5'>  <h3> <Link to='/login'>Login</Link></h3> 
            <h3> <Link to='/registration'>Registration</Link></h3> </div>
           }
         </div>

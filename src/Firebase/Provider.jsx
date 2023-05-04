@@ -20,9 +20,9 @@ const Provider = ({children}) => {
      }
      
 
-      const loginUser=(email,password)=>{
+      const loginUser=(email,password  )=>{
       //  setLoading(true)
-       return  signInWithEmailAndPassword(auth, email, password)
+       return  signInWithEmailAndPassword(auth, email, password  )
       
      }
     
