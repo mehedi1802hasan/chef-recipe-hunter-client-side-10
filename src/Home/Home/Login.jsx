@@ -7,10 +7,11 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 const Login = () => {
   const [error,setError]=useState('')
+  const [success,setSuccess]=useState('');
   const {loginUser,googleLogin,githubLogin}=useContext(AuthContext)
   const handleSubmit=(event)=>{
     event.preventDefault()
-   
+    setSuccess('')
  const form=event.target;
  const email=form.email.value;
  const password=form.password.value;
@@ -19,11 +20,15 @@ const Login = () => {
  .then(result=>{
     const loggedUser=result.user;
     console.log(loggedUser);
- navigate(from,{replace:true})
+    setSuccess('successfully Login done');
+    setError('')
+ //navigate(from,{replace:true})
  })
  .catch(error=>{
     console.log(error.message)
+    setSuccess('')
     setError(error.message)
+    return
  })
 }
 
@@ -85,9 +90,11 @@ const handleGithubPopUp=()=>{
 
   <button onClick={handleGithubPopUp} className="btn btn-outline "> <FaGithub />Sign in with GitHub</button>
 </div>
-{
+
+  
   <p className='text-center text-red-500'>{error}</p>
-}
+
+<p className='text-center text-green-500'>{success}</p>
  <p className='text-center'>New User?. Please go to <Link className='btn-link' to="/registration">Registration</Link></p>
     </div>
   </div>
