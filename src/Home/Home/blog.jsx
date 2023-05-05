@@ -12,8 +12,8 @@ const Blog = () => {
                     <p >Answer:Controlled components in React manage their state through props passed down from the parent, while uncontrolled components manage their state internally. This means that the parent component has direct control over the state of a controlled component, while it has no direct access to the state of an uncontrolled component.</p>
                 </div>
                 <div className='m-5'>
-                    <h3 className='text-red-500'>2:How to validate React props using PropTypes</h3>
-                    <p>Answer:o validate React props using PropTypes, you can import the prop-types package and define the expected data type and structure of the props using the propTypes object. You can then assign the propTypes object to your component using the propTypes static property. When the component is used, React will automatically validate the props against the propTypes object and show a warning in the console if the validation fails.</p>
+                    <h3 className='text-red-500'>2:How to validate React props using PropTypes?</h3>
+                    <p>Answer:To validate React props using PropTypes, you need to import the PropTypes library and define the propTypes object inside your component. The propTypes object should have a key-value pair for each prop you want to validate, with the key being the prop name and the value being the validation rule.</p>
                 </div>
                 <div className='m-5'>
                     <h3 className='text-red-500'>3:Tell us the difference between nodejs and express js.?</h3>
