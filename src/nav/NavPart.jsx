@@ -22,7 +22,7 @@ const handleLogout=()=>{
             </label>
             <ul tabIndex={0} className="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
               <li><Link to='/'>Home</Link></li>
-              <li> <Link to='/'>Blog</Link></li>
+              <li> <Link to='/blog'>Blog</Link></li>
               <li> <Link to='/login'>Login</Link></li>
               <li> <Link to='/registration'>Registration</Link></li>
             </ul>
@@ -33,7 +33,7 @@ const handleLogout=()=>{
           <ul className="px-1 menu menu-horizontal">
             <li> <Link to='/'>Home</Link></li>
             
-           <li> <Link to='/'>Blog</Link></li>
+           <li> <Link to='/blog'>Blog</Link></li>
           
           </ul>
         </div>
