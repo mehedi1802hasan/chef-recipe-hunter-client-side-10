@@ -7,6 +7,7 @@ import ActiveLink from '../ActiveLink/ActiveLink';
 const NavPart = () => {
 
 const {user,logOut}=useContext(AuthContext)
+const dummyImg=()=>{url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxDvFBo36ZkpzjIH213uqwguxHvRDhUbbxHg&usqp=CAU')}
 const handleLogout=()=>{
   logOut()
   .then(()=>{})
@@ -46,10 +47,22 @@ const handleLogout=()=>{
           {
             user ?
           <div className='flex '>
-       <div className="w-10 rounded-full">
-       <img src={user?.photoURL} />
-
+     <div className="relative w-16 ">
+  <img
+    src={user?.photoURL ||  dummyImg}
+    className="hover:opacity-50"
+  />
+  <div className="absolute bottom-0 left-0 right-0 p-2 text-sm text-center text-white transition-opacity duration-300 bg-gray-800 opacity-0">
+    {user?.displayName}
+  </div>
+  <style jsx>{`
+    .relative:hover > .opacity-0 {
+      opacity: 1;
+    }
+  `}</style>
 </div>
+
+
 
 
              <button onClick={handleLogout}>signOUt</button>
