@@ -11,6 +11,7 @@ import Registration from '../Home/Home/Registration';
 import Error from '../Error/Error';
 import LoginLayout from './loginlayout/LoginLayout';
 import Blog from '../Home/Home/blog';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
      
       {
           path:'/chefs/:id',
-          element:<CCard></CCard>
+          element:<PrivateRoute><CCard></CCard></PrivateRoute>
       }
      ]
      
