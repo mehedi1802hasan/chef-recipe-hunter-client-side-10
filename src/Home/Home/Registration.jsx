@@ -3,7 +3,8 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Firebase/Provider';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Registration = () => {
   const { signUp } = useContext(AuthContext)
   const [error,setError]=useState('')
@@ -27,6 +28,7 @@ const Registration = () => {
         const singgedUser = result.user;
         console.log(singgedUser);
         setSuccess('successfully registration');
+        toast('Wow!! successfuylly registration');
         setError('')
       })
       .catch(error => {
@@ -76,13 +78,14 @@ const Registration = () => {
                   <button className="btn btn-primary">Registration</button>
                 </div>
               </form>
-              <p className='text-center text-red-500'>{success}</p>
+              <p className='text-center text-green-500'>{success}</p>
               <p className='text-center text-red-500'>{error}</p>
               <p className='text-center'>Have an account? Please go to <Link className='btn-link' to="/login">Login</Link></p>
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

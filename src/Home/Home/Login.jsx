@@ -5,6 +5,8 @@ import { AuthContext } from '../../Firebase/Provider';
 import { FaGoogle,FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const [error,setError]=useState('')
   const [success,setSuccess]=useState('');
@@ -21,6 +23,7 @@ const Login = () => {
     const loggedUser=result.user;
     console.log(loggedUser);
     setSuccess('successfully Login done');
+    toast('Congratulations!!successfuylly login');
     setError('')
  //navigate(from,{replace:true})
  })
@@ -98,6 +101,7 @@ const handleGithubPopUp=()=>{
  <p className='text-center'>New User?. Please go to <Link className='btn-link' to="/registration">Registration</Link></p>
     </div>
   </div>
+  <ToastContainer/>
 </div>
 
         </div>
