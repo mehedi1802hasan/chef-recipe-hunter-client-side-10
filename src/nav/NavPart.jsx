@@ -13,6 +13,8 @@ const handleLogout=()=>{
     console.log(error.message)
   })
 }
+
+
     return (
         <div className="flex w-11/12 m-auto navbar ">
         <div className="navbar-start">
